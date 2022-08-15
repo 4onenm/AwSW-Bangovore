@@ -26,8 +26,23 @@ def bangovore_four_anna4():
     ml.ast_link.utils._create_hook(node_from=m2.node, func=ml.pages._show_charmenu, tag="bangovore_four_anna4_chow_down_menu2_paginator") 
 
 
+def bangovore_four_xsebastian():
+    ( ml.find_label('sebastianskip')
+        .search_menu("It's pretty cold.")
+        .branch()
+        .search_menu("I'll take it.")
+        .link_behind_from('bangovore_four_xsebastian_noromance')
+        .branch()
+        .search_say("Is that better?")
+        .hook_to('bangovore_four_xsebastian_choice', return_link=False, condition='persistent.nsfwtoggle == True')
+        .search_say("Sure.")
+        .link_behind_from('bangovore_four_xsebastian_choice_end')
+    )
+
+
 def link_scenes():
     bangovore_four_anna4()
+    bangovore_four_xsebastian()
 
 @loadable_mod
 class BangOVoreMod(Mod):
