@@ -249,8 +249,6 @@ label bangovore_four_anna4_chow_down:
                 jump todo_bangovore_four_anna4_out_of_content
             "Heart." if bangovore_four_anna4.chestcavity_unasked == True:
                 jump bangovore_four_anna4_chow_down_chestcavity
-            "Lung." if bangovore_four_anna4.chestcavity_unasked == True:
-                jump bangovore_four_anna4_chow_down_chestcavity
             "Leg." if bangovore_four_anna4.round_uneaten == True:
                 $ bangovore_four_anna4.round_uneaten = False
                 jump todo_bangovore_four_anna4_out_of_content
@@ -283,8 +281,6 @@ label bangovore_four_anna4_chow_down:
                 $ bangovore_four_anna4.liver_uneaten = False
                 jump todo_bangovore_four_anna4_out_of_content
             "... heart..." if bangovore_four_anna4.chestcavity_unasked == True:
-                jump bangovore_four_anna4_chow_down_chestcavity
-            "... lung..." if bangovore_four_anna4.chestcavity_unasked == True:
                 jump bangovore_four_anna4_chow_down_chestcavity
             "... leg..." if bangovore_four_anna4.round_uneaten == True:
                 $ bangovore_four_anna4.round_uneaten = False
