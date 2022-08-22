@@ -1,12 +1,13 @@
 from modloader.modclass import Mod, loadable_mod
 import jz_magmalink as ml
+from bangok_four import register_fetish
 
 def bangovore_four_anna4():
     ( ml.find_label('a4romance')
         .search_menu("If you say so.")
         .branch()
         .search_say("Not like that! You'll ruin them. I'll do it.")
-        .hook_to('bangovore_four_anna4', return_link=True, condition='persistent.nsfwtoggle == True and annagoodending == False')
+        .hook_to('bangovore_four_anna4', return_link=True, condition='persistent.nsfwtoggle == True and annagoodending == False and persistent.bangovore_hardvore == True')
     )
 
     ( ml.find_label('bangok_anon_anna4_start')
@@ -34,7 +35,7 @@ def bangovore_four_xsebastian():
         .link_behind_from('bangovore_four_xsebastian_noromance')
         .branch()
         .search_say("Is that better?")
-        .hook_to('bangovore_four_xsebastian_choice', return_link=False, condition='persistent.nsfwtoggle == True')
+        .hook_to('bangovore_four_xsebastian_choice', return_link=False, condition='persistent.nsfwtoggle == True and persistent.bangovore_softvore == True')
         .search_say("Sure.")
         .link_behind_from('bangovore_four_xsebastian_choice_end')
     )
@@ -54,6 +55,16 @@ class BangOVoreMod(Mod):
 
     @staticmethod
     def mod_load():
+        register_fetish("Soft Vore", 'bangovore_softvore',
+            active_image="image/ui/bangovore/icons/bangovore_softvore_active.png",
+            inactive_image="image/ui/bangovore/icons/bangovore_softvore_inactive.png",
+        )
+
+        register_fetish("Hard Vore", 'bangovore_hardvore',
+            active_image="image/ui/bangovore/icons/bangovore_hardvore_active.png",
+            inactive_image="image/ui/bangovore/icons/bangovore_hardvore_inactive.png",
+        )
+
         link_scenes()
 
     @staticmethod
