@@ -60,6 +60,12 @@ class BangOVoreMod(Mod):
             inactive_image="image/ui/bangovore/icons/bangovore_softvore_inactive.png",
         )
 
+        register_fetish("Digestion", 'bangovore_digestion',
+            clean_label="Archeology",
+            image_clean=True,
+            image="image/ui/bangovore/icons/bangovore_digestion.png",
+        )
+
         register_fetish("Hard Vore", 'bangovore_hardvore',
             active_image="image/ui/bangovore/icons/bangovore_hardvore_active.png",
             inactive_image="image/ui/bangovore/icons/bangovore_hardvore_inactive.png",
