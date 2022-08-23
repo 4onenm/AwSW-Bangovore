@@ -96,6 +96,7 @@ label bangovore_four_xsebastian_choice:
             jump bangovore_four_xsebastian_noromance
         "Undress.":
             $ renpy.pause (0.5)
+            $ bangok_four_xsebastian_unplayed = False
     play sound "fx/undress.ogg"
     $ renpy.pause (0.8)
     c "Thanks for this, Sebastian."
