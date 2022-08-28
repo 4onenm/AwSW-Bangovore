@@ -27,6 +27,13 @@ def bangovore_four_anna4():
     ml.ast_link.utils._create_hook(node_from=m2.node, func=ml.pages._show_charmenu, tag="bangovore_four_anna4_chow_down_menu2_paginator") 
 
 
+def bangovore_four_bryce3():
+    ( ml.find_label('bangok_four_bryce3_mcbottom_train_epilogue')
+        .search_say("I hope not. Came up with a couple ideas while packing the trash.")
+        .hook_to('bangovore_four_bryce3_mcbottom_train_epilogue', return_link=True, condition='persistent.nsfwtoggle == True and persistent.bangovore_softvore == True')
+    )
+
+
 def bangovore_four_xsebastian():
     ( ml.find_label('sebastianskip')
         .search_menu("It's pretty cold.")
@@ -43,6 +50,7 @@ def bangovore_four_xsebastian():
 
 def link_scenes():
     bangovore_four_anna4()
+    bangovore_four_bryce3()
     bangovore_four_xsebastian()
 
 @loadable_mod
