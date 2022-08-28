@@ -24,6 +24,10 @@ init:
         (0,0), "bg/bangovore/sebbelly_cumoverlay.png",
     )
 
+    python:
+        bangovore_four_xsebastian_undiscussed = True
+        bangovore_four_xsebastian_unplayed = True
+
 label bangovore_four_xsebastian_choice:
     menu:
         "Sure.":
@@ -50,6 +54,7 @@ label bangovore_four_xsebastian_choice:
     c "{i}Eat{/i} me?!"
     Sb normal b dk "It's a technique taught in the police academy, for carrying someone and keeping your hands free if you have to, and have the time."
     Sb drop b dk "I was trained on... smaller dragons than you. But you also have fewer sharp bits sticking out of you."
+    $ bangovore_four_xsebastian_undiscussed = False
     menu:
         "No. Please don't eat me.":
             c "I'll take shivering over being digested, thanks."
@@ -96,6 +101,7 @@ label bangovore_four_xsebastian_choice:
             jump bangovore_four_xsebastian_noromance
         "Undress.":
             $ renpy.pause (0.5)
+            $ bangovore_four_xsebastian_unplayed = False
             $ bangok_four_xsebastian_unplayed = False
     play sound "fx/undress.ogg"
     $ renpy.pause (0.8)
